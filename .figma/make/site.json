@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your skills and projects with a sleek, modern portfolio designed for aspiring data engineers and AI students, enhancing professional visibility.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
