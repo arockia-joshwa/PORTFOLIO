@@ -534,7 +534,7 @@ export default function App() {
             </div>
 
             <div className="flex items-center gap-4 pt-2">
-              <SocialButton href="https://linkedin.com/in/joshwa-j-6051a4327/" icon={<IconLinkedIn size={17} />} label="LinkedIn" />
+              <SocialButton href="https://www.linkedin.com/in/arockia-joshwa" icon={<IconLinkedIn size={17} />} label="LinkedIn" />
               <SocialButton href="https://github.com/arockia-joshwa" icon={<IconGitHub size={17} />} label="GitHub" />
               <SocialButton href="mailto:joshwa192007@gmail.com" icon={<IconMail size={17} />} label="Email" />
             </div>
@@ -893,7 +893,7 @@ export default function App() {
 
               <div className="pt-4 space-y-3">
                 <a
-                  href="https://linkedin.com/in/joshwa-j-6051a4327/"
+                  href="https://www.linkedin.com/in/arockia-joshwa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-xl border border-[rgba(56,189,248,0.15)] hover:border-[rgba(56,189,248,0.4)] transition-all duration-200 hover:shadow-[0_0_16px_rgba(56,189,248,0.15)] group"
@@ -948,7 +948,7 @@ export default function App() {
                 Let's Connect
               </a>
               <a
-                href="https://linkedin.com/in/joshwa-j-6051a4327/"
+                href="https://www.linkedin.com/in/arockia-joshwa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline w-full py-3 text-sm flex items-center justify-center gap-2"
@@ -975,7 +975,7 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-3">
-            <SocialButton href="https://linkedin.com/in/joshwa-j-6051a4327/" icon={<IconLinkedIn size={16} />} label="LinkedIn" />
+            <SocialButton href="https://www.linkedin.com/in/arockia-joshwa" icon={<IconLinkedIn size={16} />} label="LinkedIn" />
             <SocialButton href="https://github.com/arockia-joshwa" icon={<IconGitHub size={16} />} label="GitHub" />
             <SocialButton href="mailto:joshwa192007@gmail.com" icon={<IconMail size={16} />} label="Email" />
           </div>
