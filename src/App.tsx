@@ -408,6 +408,7 @@ export default function App() {
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
+    { id: "education", label: "Education" },
     { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
   ];
@@ -426,6 +427,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "var(--background)" }}>
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-[#38bdf8] focus:text-[#080c14] focus:px-4 focus:py-2 focus:rounded-md focus:font-display focus:text-sm focus:font-semibold"
+      >
+        Skip to content
+      </a>
       <AnimatedBackground />
       <div className="relative z-10">
 
@@ -528,6 +535,13 @@ export default function App() {
                 View My Projects
                 <IconExternalLink size={15} />
               </button>
+              <a
+                href="/resume.pdf"
+                download
+                className="btn-outline px-6 py-3 text-sm inline-flex items-center gap-2"
+              >
+                Download Resume
+              </a>
               <button onClick={() => scrollTo("contact")} className="btn-outline px-6 py-3 text-sm">
                 Contact Me
               </button>
@@ -687,13 +701,13 @@ export default function App() {
             </div>
             <div className="p-6 space-y-4">
               <div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">Resume Matcher</h3>
+                <h3 className="font-display text-xl font-bold text-white mb-2">Resume Matcher — NLP-Based Resume & Job Description Matching</h3>
                 <p className="text-[#94a3b8] text-sm leading-relaxed">
                   An intelligent resume matching project designed to compare resumes with job requirements and identify relevant skills and matching information.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Python", "NLP", "Data Processing", "Add Tech →"].map((tag) => (
+                {["Python", "NLP", "Data Processing"].map((tag) => (
                   <span
                     key={tag}
                     className="font-mono-label text-[10px] px-2.5 py-1 rounded-full border border-[rgba(56,189,248,0.2)] text-[#38bdf8]"
@@ -754,30 +768,60 @@ export default function App() {
         </div>
       </section>
 
+      {/* ─── EDUCATION ─── */}
+      <section id="education" className="py-28 max-w-7xl mx-auto px-6">
+        <SectionHeader
+          tag="// 04 — EDUCATION"
+          title={<>My <span className="text-[#38bdf8]">Education</span></>}
+        />
+
+        <Reveal type="fade-up" className="max-w-2xl mx-auto">
+          <div
+            className="card-dark p-8 flex items-start gap-5"
+            style={{ background: "linear-gradient(135deg, rgba(14,20,33,1), rgba(18,26,44,0.8))" }}
+          >
+            <div
+              className="w-14 h-14 rounded-lg flex items-center justify-center shrink-0 border border-[rgba(56,189,248,0.2)] text-[#38bdf8]"
+              style={{ background: "rgba(56,189,248,0.05)" }}
+            >
+              <IconGraduationCap size={26} />
+            </div>
+            <div>
+              <h3 className="font-display text-lg font-bold text-white mb-1">
+                B.Tech, Artificial Intelligence and Data Science
+              </h3>
+              <div className="text-[#38bdf8] text-sm font-medium mb-1">
+                Dhanalakshmi Srinivasan University
+              </div>
+              <div className="text-[#64748b] text-xs">
+                Perambalur, Tamil Nadu · 2024 – 2028
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ─── CERTIFICATIONS ─── */}
       <section id="certifications" className="py-28 max-w-7xl mx-auto px-6">
         <SectionHeader
-          tag="// 04 — CERTIFICATIONS"
+          tag="// 05 — CERTIFICATIONS"
           title={<>Certifications & <span className="text-[#38bdf8]">Learning</span></>}
           subtitle="Continuous learning through courses and certifications"
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((n, i) => (
-            <Reveal key={n} type="fade-right" delay={i * 130} className="card-dark p-6 flex flex-col gap-4">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {[
+            { name: "Oracle Certified Foundations Associate", org: "Oracle Fusion AI Agent Studio" },
+            { name: "Introduction to Model Context Protocol", org: "Anthropic Education" },
+          ].map((cert, i) => (
+            <Reveal key={cert.name} type="fade-right" delay={i * 130} className="card-dark p-6 flex flex-col gap-4">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center border border-[rgba(56,189,248,0.2)] text-[#38bdf8]" style={{ background: "rgba(56,189,248,0.05)" }}>
                 <IconAward size={18} />
               </div>
               <div>
-                <div className="font-mono-label text-[10px] text-[#38bdf8] mb-1">CERTIFICATION 0{n}</div>
-                <h3 className="font-display font-semibold text-white mb-1">Certification Name</h3>
-                <div className="text-[#64748b] text-xs">Issuing Organization</div>
-                <div className="text-[#64748b] text-xs mt-0.5">Year</div>
-              </div>
-              <div className="mt-auto pt-2">
-                <button className="btn-outline w-full py-2 text-xs flex items-center justify-center gap-1.5 opacity-50 cursor-default">
-                  View Certificate <IconExternalLink size={11} />
-                </button>
+                <div className="font-mono-label text-[10px] text-[#38bdf8] mb-1">CERTIFICATION 0{i + 1}</div>
+                <h3 className="font-display font-semibold text-white mb-1">{cert.name}</h3>
+                <div className="text-[#64748b] text-xs">{cert.org}</div>
               </div>
             </Reveal>
           ))}
@@ -785,46 +829,48 @@ export default function App() {
       </section>
 
       {/* ─── EXPERIENCE ─── */}
-      <section className="py-28" style={{ background: "rgba(14,20,33,0.5)" }}>
+      <section id="experience" className="py-28" style={{ background: "rgba(14,20,33,0.5)" }}>
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
-            tag="// 05 — EXPERIENCE"
+            tag="// 06 — EXPERIENCE"
             title={<>My <span className="text-[#38bdf8]">Experience</span></>}
           />
 
-          <Reveal type="flip-up" className="max-w-2xl mx-auto text-center">
-            <div
-              className="card-dark p-10 flex flex-col items-center gap-5"
-              style={{ background: "linear-gradient(135deg, rgba(14,20,33,1), rgba(18,26,44,0.8))" }}
-            >
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center border border-[rgba(56,189,248,0.2)] text-[#38bdf8]"
-                style={{ background: "rgba(56,189,248,0.05)", boxShadow: "0 0 20px rgba(56,189,248,0.1)" }}
-              >
-                <IconBriefcase size={24} />
-              </div>
-              <div>
-                <h3 className="font-display text-xl font-bold text-white mb-3">Currently Building My Experience</h3>
-                <p className="text-[#94a3b8] text-sm leading-relaxed max-w-md">
-                  Focused on developing practical skills through projects, learning, and opportunities in Data Engineering, Artificial Intelligence, and Data Science.
-                </p>
-              </div>
-              {/* Editable placeholder card */}
-              <div className="w-full mt-2 p-5 rounded-xl border border-dashed border-[rgba(56,189,248,0.2)]" style={{ background: "rgba(56,189,248,0.02)" }}>
-                <div className="font-mono-label text-[10px] text-[#38bdf8] mb-2 tracking-wider">INTERNSHIP / EXPERIENCE PLACEHOLDER</div>
-                <div className="font-display font-semibold text-sm text-white opacity-40 mb-1">Company / Organization Name</div>
-                <div className="text-[#64748b] text-xs">Role · Duration · Location</div>
-                <div className="text-[#64748b] text-xs mt-2 leading-relaxed opacity-60">Replace this card with your internship or work experience details when available.</div>
-              </div>
-            </div>
-          </Reveal>
+          <div className="max-w-2xl mx-auto flex flex-col gap-6">
+            {[
+              {
+                title: "AI Transformation Consultant (Simulated)",
+                org: "Tata iQ — Geldium Financial Services project",
+                desc: "Worked on a simulated credit card delinquency risk prediction engagement, producing an EDA Summary Report, a Predictive Model Plan, and a Business Summary Report.",
+              },
+              {
+                title: "Gen AI and Cloud Computing Intern",
+                org: "IBM SkillsBuild (AICTE Internship Portal)",
+                desc: "Completed IBM SkillsBuild's Generative AI and Cloud Computing internship track.",
+              },
+            ].map((exp) => (
+              <Reveal key={exp.title} type="flip-up" className="card-dark p-8 flex items-start gap-5" style={{ background: "linear-gradient(135deg, rgba(14,20,33,1), rgba(18,26,44,0.8))" }}>
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 border border-[rgba(56,189,248,0.2)] text-[#38bdf8]"
+                  style={{ background: "rgba(56,189,248,0.05)", boxShadow: "0 0 20px rgba(56,189,248,0.1)" }}
+                >
+                  <IconBriefcase size={22} />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white mb-1">{exp.title}</h3>
+                  <div className="text-[#38bdf8] text-sm font-medium mb-2">{exp.org}</div>
+                  <p className="text-[#94a3b8] text-sm leading-relaxed">{exp.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ─── ACHIEVEMENTS ─── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
+      <section id="achievements" className="py-28 max-w-7xl mx-auto px-6">
         <SectionHeader
-          tag="// 06 — ACHIEVEMENTS"
+          tag="// 07 — ACHIEVEMENTS"
           title={<>Key <span className="text-[#38bdf8]">Achievements</span></>}
           subtitle="Milestones and recognitions along the journey"
         />
@@ -856,7 +902,7 @@ export default function App() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionHeader
-            tag="// 07 — CONTACT"
+            tag="// 08 — CONTACT"
             title={<>Let's Build Something <span className="text-[#38bdf8]">With Data</span></>}
             subtitle="Have an opportunity, project idea, or simply want to connect? I'd be happy to hear from you."
           />

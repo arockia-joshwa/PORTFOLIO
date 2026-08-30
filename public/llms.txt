@@ -6,11 +6,14 @@ This site belongs to Arockia Joshwa J., an AI/Data Science student with foundati
 
 ## Pages
 
-- [Home](/): Introduction and overview
-- [About](/about): Background, education, and skills
-- [Projects](/projects): Portfolio of technical projects
-- [Experience](/experience): Internships and work history
-- [Contact](/contact): Ways to get in touch
+This is a single-page site. All sections below live on the homepage (/) as in-page anchors:
+
+- [Home](/#home): Introduction and overview
+- [About](/#about): Background and summary
+- [Skills](/#skills): Technical skills
+- [Projects](/#projects): Portfolio of technical projects
+- [Certifications](/#certifications): Certifications and continuous learning
+- [Contact](/#contact): Ways to get in touch
 
 ## Skills
 
